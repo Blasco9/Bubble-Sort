@@ -3,16 +3,14 @@ def bubble_sort(arr)
   j = 0
   while i < arr.size
     j = i + 1
-    unless i == arr.size - 1
-      while j < arr.size
-        if arr[i] > arr[j]
-          temp = arr[i]
-          arr[i] = arr[j]
-          arr[j] = temp
-        end
-        j += 1
+    while j <= arr.size - 1
+      if arr[i] > arr[j]
+        temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
       end
-    end 
+      j += 1
+    end
     i += 1
   end
 end
