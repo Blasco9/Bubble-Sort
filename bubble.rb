@@ -13,7 +13,7 @@ def bubble_sort(arr)
     end
     i += 1
   end
-  return arr
+  arr
 end
 
 arr = [54, 14, 90, 2, 25]
@@ -38,7 +38,7 @@ def bubble_sort_by(arr)
     end
     i += 1
   end
-  return arr
+  arr
 end
 
 bubble = bubble_sort_by(arr1) do |num, num1|
