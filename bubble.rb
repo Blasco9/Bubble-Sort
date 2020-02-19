@@ -17,30 +17,30 @@ def bubble_sort(arr)
   end
 end
 
-arr = [54,14,90,2,25]
+arr = [54, 14, 90, 2, 25]
 
 bubble_sort(arr)
 
 p arr
 
-arr1 = %w(hi hello hey)
+arr1 = %w[hi hello hey]
 p arr1
 
 def bubble_sort_by(arr)
   i = 0
   j = 0
   while i < arr.size
-      j = i + 1
-      while j < arr.size
-          result = yield(arr[i], arr[j])
-          if result > 0
-              temp = arr[j]
-              arr[j] = arr[i]
-              arr[i] = temp
-          end
-          j += 1
+    j = i + 1
+    while j < arr.size
+      result = yield(arr[i], arr[j])
+      if result.positive?
+        temp = arr[j]
+        arr[j] = arr[i]
+        arr[i] = temp
       end
-      i += 1
+      j += 1
+    end
+    i += 1
   end
 end
 
