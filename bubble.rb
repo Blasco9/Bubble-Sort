@@ -24,17 +24,29 @@ bubble_sort(arr)
 
 p arr
 
+arr1 = %w(hi hello hey)
+p arr1
+
 def bubble_sort_by(arr)
     i = 0
     j = 0
     while i < arr.size
         j = i+1
         while j < arr.size
-            yield(arr[i], arr[j])
+            result = yield(arr[i], arr[j])
+            if result > 0
+                temp = arr[j]
+                arr[j] = arr[i]
+                arr[i] = temp
+            end
             j += 1
         end
         i += 1
     end
 end
 
-bubble_sort_by(arr) { |num, num1| puts "#{num}, #{num1}" }
+bubble_sort_by(arr1) do |num, num1|
+    num.length - num1.length
+end
+
+p arr1
