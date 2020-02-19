@@ -13,16 +13,14 @@ def bubble_sort(arr)
     end
     i += 1
   end
+  return arr
 end
 
 arr = [54, 14, 90, 2, 25]
 
-bubble_sort(arr)
-
-p arr
+p bubble_sort(arr)
 
 arr1 = %w[hi hello hey]
-p arr1
 
 def bubble_sort_by(arr)
   i = 0
@@ -40,10 +38,11 @@ def bubble_sort_by(arr)
     end
     i += 1
   end
+  return arr
 end
 
-bubble_sort_by(arr1) do |num, num1|
+bubble = bubble_sort_by(arr1) do |num, num1|
   num.length - num1.length
 end
 
-p arr1
+p bubble
